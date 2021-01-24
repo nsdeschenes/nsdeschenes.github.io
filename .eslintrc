@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "standard",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": ["jest", "react-hooks"],
+  "env": {
+    "jest/globals": true
+  },
+  "rules": {
+    "react/no-unescaped-entities": ["off", {}],
+    "comma-dangle": ["error", "always-multiline"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "all",
+        "varsIgnorePattern": "_",
+        "argsIgnorePattern": "_"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
