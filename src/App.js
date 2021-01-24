@@ -1,9 +1,13 @@
-import React, { Suspense } from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { Flex, Link, CSSReset } from '@chakra-ui/react'
 
 import { Navbar } from './components/Navbar'
 import { Main } from './components/Main'
+
+const Home = lazy(() => import('./pages/Home'))
+const Projects = lazy(() => import('./pages/Projects'))
+const Presentations = lazy(() => import('./pages/Presentations'))
 
 const App = () => {
   return (
@@ -19,13 +23,13 @@ const App = () => {
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
               <Route exact path="/">
-                <p>Home</p>
+                <Home />
               </Route>
               <Route exact path="/projects">
-                <p>Projects</p>
+                <Projects />
               </Route>
               <Route exact path="/presentations">
-                <p>Presentations</p>
+                <Presentations />
               </Route>
             </Switch>
           </Suspense>
