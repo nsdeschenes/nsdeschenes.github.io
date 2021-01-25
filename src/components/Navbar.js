@@ -16,7 +16,7 @@ export const Navbar = ({ children, ...props }) => {
       color="primary"
       borderBottom="2px solid"
       borderBottomColor="gray.300"
-      display={{ base: 'none', md: 'flex' }}
+      display={{ base: 'flex', md: 'flex' }}
       {...props}
     >
       <Flex
