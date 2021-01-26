@@ -7,7 +7,7 @@ import ProjectCard from '../components/ProjectCard'
 const Projects = () => {
   return (
     <Box width="fit-content" mx="auto">
-      <SimpleGrid columns="3" spacing="60px" mx="auto">
+      <SimpleGrid columns={[1, null, 3]} spacing="60px" mx="auto">
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
