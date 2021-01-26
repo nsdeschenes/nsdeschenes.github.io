@@ -12,30 +12,28 @@ const ProjectCard = ({ project }) => {
       overflow="hidden"
       boxShadow="md"
       _hover={{ boxShadow: '2xl', transitionDuration: '0.5s' }}
+      as="a"
+      cursor="pointer"
+      target="_blank"
+      href={project.projectUrl}
     >
-      <Box as="a" cursor="pointer" target="_blank" href={project.projectUrl}>
-        <Box backgroundColor={project.imageBackground} py="1">
-          <Box width="fit-content" mx="auto">
-            <Image
-              objectFit="cover"
-              src={project.image}
-              alt={project.imageAlt}
-            />
-          </Box>
+      <Box backgroundColor={project.imageBackground} py="1">
+        <Box width="fit-content" mx="auto">
+          <Image objectFit="cover" src={project.image} alt={project.imageAlt} />
         </Box>
-        <Box px="4" py="2">
-          <Box
-            mt="1"
-            fontWeight="semibold"
-            as="h4"
-            lineHeight="tight"
-            isTruncated
-          >
-            {project.title}
-          </Box>
-          <Box color="gray.600" fontSize="sm">
-            {project.description}
-          </Box>
+      </Box>
+      <Box px="4" py="2">
+        <Box
+          mt="1"
+          fontWeight="semibold"
+          as="h4"
+          lineHeight="tight"
+          isTruncated
+        >
+          {project.title}
+        </Box>
+        <Box color="gray.600" fontSize="sm">
+          {project.description}
         </Box>
       </Box>
     </Box>
