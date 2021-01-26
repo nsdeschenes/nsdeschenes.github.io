@@ -1,8 +1,8 @@
 import React from 'react'
-import { Box, Image } from '@chakra-ui/react'
+import { Box, AspectRatio } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 
-const ProjectCard = ({ project }) => {
+const PresentationCard = ({ presentation }) => {
   return (
     <Box
       maxH="lg"
@@ -15,13 +15,15 @@ const ProjectCard = ({ project }) => {
       as="a"
       cursor="pointer"
       target="_blank"
-      href={project.projectUrl}
+      href={presentation.url}
     >
-      <Box backgroundColor={project.imageBackground} py="1">
-        <Box width="fit-content" mx="auto">
-          <Image objectFit="cover" src={project.image} alt={project.imageAlt} />
-        </Box>
-      </Box>
+      <AspectRatio width="358px" height="217px">
+        <iframe
+          title={presentation.title}
+          src={presentation.url}
+          allowFullScreen="false"
+        />
+      </AspectRatio>
       <Box px="4" py="2">
         <Box
           mt="1"
@@ -30,18 +32,18 @@ const ProjectCard = ({ project }) => {
           lineHeight="tight"
           isTruncated
         >
-          {project.title}
+          {presentation.title}
         </Box>
         <Box color="gray.600" fontSize="sm">
-          {project.description}
+          {presentation.description}
         </Box>
       </Box>
     </Box>
   )
 }
 
-export default ProjectCard
+export default PresentationCard
 
-ProjectCard.propTypes = {
-  project: PropTypes.object,
+PresentationCard.propTypes = {
+  presentation: PropTypes.object,
 }
