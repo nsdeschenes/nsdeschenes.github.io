@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   return (
     <Box
       maxH="lg"
-      width="fit-content"
+      width="360px"
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
