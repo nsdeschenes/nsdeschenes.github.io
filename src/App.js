@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { Flex, Link, CSSReset, Image } from '@chakra-ui/react'
+import { Flex, Link, CSSReset, Image, Stack, Text } from '@chakra-ui/react'
 
 import { Navbar } from './components/Navbar'
 import { Main } from './components/Main'
@@ -38,10 +38,10 @@ const App = () => {
         </Main>
         <Footer>
           <Link href="https://github.com/nsdeschenes" target="_blank">
-            <Flex verticalAlign="middle">
-              <Image align="vertical" alt="Github Logo" src={GithubLogo} mr="5px" />
-              Github
-            </Flex>
+            <Stack isInline align="center" my="auto">
+              <Image align="vertical" alt="Github Logo" src={GithubLogo}/>
+              <Text>Github</Text>
+            </Stack>
           </Link>
         </Footer>
       </Flex>
