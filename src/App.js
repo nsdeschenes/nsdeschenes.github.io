@@ -1,9 +1,11 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { Flex, Link, CSSReset } from '@chakra-ui/react'
+import { Flex, Link, CSSReset, Image, Stack, Text } from '@chakra-ui/react'
 
 import { Navbar } from './components/Navbar'
 import { Main } from './components/Main'
+import { Footer } from './components/Footer'
+import GithubLogo from './images/github.svg'
 
 const Home = lazy(() => import('./pages/Home'))
 const Projects = lazy(() => import('./pages/Projects'))
@@ -34,6 +36,14 @@ const App = () => {
             </Switch>
           </Suspense>
         </Main>
+        <Footer>
+          <Link href="https://github.com/nsdeschenes" target="_blank">
+            <Stack isInline align="center" my="auto">
+              <Image align="vertical" alt="Github Logo" src={GithubLogo}/>
+              <Text>Github</Text>
+            </Stack>
+          </Link>
+        </Footer>
       </Flex>
     </>
   )
