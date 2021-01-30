@@ -5,9 +5,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "prepublish": "npm run build && echo nsdeschenes.ca > build/CNAME",
+    "publish": "node scripts/gh-pages-deploy.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
