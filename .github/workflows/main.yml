@@ -49,7 +49,7 @@ jobs:
       - name: Setup Git Commit
         run: |
           git --work-tree build add --all
-          git --word-tree build commit -m gh-pages
+          git --work-tree build commit -m gh-pages
 
       - name: Push To GitHub Pages
         run: |
