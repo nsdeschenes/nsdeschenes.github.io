@@ -1,6 +1,7 @@
-import trackerLogo from '../images/tracker_logo.png'
-import redisGraphql from '../images/redis_graphql.png'
 import linguiGraphql from '../images/lingui_graphql.png'
+import reactLogo from '../images/react_logo.png'
+import redisGraphql from '../images/redis_graphql.png'
+import trackerLogo from '../images/tracker_logo.png'
 
 const projects = [
   {
@@ -11,6 +12,15 @@ const projects = [
     title: 'Tracker',
     description:
       'Track Government of Canada domains for adherence to digital security best practices and federal requirements.',
+  },
+  {
+    image: reactLogo,
+    imageAlt: 'React Logo',
+    imageBackground: '#20232a',
+    projectUrl: 'https://github.com/nsdeschenes/nsdeschenes.github.io',
+    title: 'nsdeschenes.ca',
+    description:
+      'Just a simple create-react-app style app for displaying my projects, and presentations.',
   },
   {
     image: redisGraphql,
