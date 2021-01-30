@@ -36,4 +36,4 @@ jobs:
           GITHUB_EMAIL: ${{ secrets.EMAIL }}
         run: |
           git config user.name "$env:GITHUB_USERNAME" && git config user.email "$env:GITHUB_EMAIL"
-          npm run gh-pages-deploy
+          npm run publish
