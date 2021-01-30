@@ -35,7 +35,7 @@ jobs:
           GITHUB_USERNAME: ${{ secrets.USER_NAME }}
           GITHUB_EMAIL: ${{ secrets.EMAIL }}
         run: |
-          git config user.name "$env:GITHUB_USERNAME" && git config user.email "$env:GITHUB_EMAIL"
+          git config user.name "$GITHUB_USERNAME" && git config user.email "$GITHUB_EMAIL"
           git checkout --orphan gh-pages
 
       - name: Build App
@@ -44,7 +44,7 @@ jobs:
       - name: Create CNAME
         env:
           DOMAIN: ${{ secrets.DOMAIN }}
-        run: echo "$env:DOMAIN" > build/CNAME
+        run: echo "$DOMAIN" > build/CNAME
 
       - name: Setup Git Commit
         run: |
