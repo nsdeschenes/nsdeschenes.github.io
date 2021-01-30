@@ -30,10 +30,27 @@ jobs:
       - name: Clean install deps
         run: npm ci
       
-      - name: Run deploy script
+      - name: Setup Git Environment
         env:
           GITHUB_USERNAME: ${{ secrets.USER_NAME }}
           GITHUB_EMAIL: ${{ secrets.EMAIL }}
         run: |
           git config user.name "$env:GITHUB_USERNAME" && git config user.email "$env:GITHUB_EMAIL"
-          npm run publish
+          git checkout --orphan gh-pages
+
+      - name: Build App
+        run: npm run build
+
+      - name: Create CNAME
+        env:
+          DOMAIN: ${{ secrets.DOMAIN }}
+        run: echo "$env:DOMAIN" > build/CNAME
+
+      - name: Setup Git Commit
+        run: |
+          git --work-tree build add --all
+          git --word-tree build commit -m gh-pages
+
+      - name: Push To GitHub Pages
+        run: |
+          git push origin HEAD:gh-pages --force
