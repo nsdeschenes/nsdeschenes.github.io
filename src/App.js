@@ -39,7 +39,7 @@ const App = () => {
         <Footer>
           <Link href="https://github.com/nsdeschenes" target="_blank">
             <Stack isInline align="center" my="auto">
-              <Image align="vertical" alt="Github Logo" src={GithubLogo}/>
+              <Image align="vertical" alt="Github Logo" src={GithubLogo} />
               <Text>Github</Text>
             </Stack>
           </Link>
