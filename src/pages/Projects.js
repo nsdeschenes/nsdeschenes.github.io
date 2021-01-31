@@ -1,18 +1,16 @@
 import React from 'react'
-import { Box, SimpleGrid } from '@chakra-ui/react'
 
 import projects from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
+import Grid from '../components/Grid'
 
 const Projects = () => {
   return (
-    <Box width="fit-content" mx="auto">
-      <SimpleGrid columns={[1, null, 3]} spacing="60px" mx="auto">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-      </SimpleGrid>
-    </Box>
+    <Grid>
+      {projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
+      ))}
+    </Grid>
   )
 }
 
