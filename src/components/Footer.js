@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Flex, List, ListItem } from '@chakra-ui/react'
+import { Flex, List, ListItem, useColorModeValue } from '@chakra-ui/react'
 
 import { Layout } from './Layout'
 
 export const Footer = (props) => {
+  const bg = useColorModeValue("gray.300", "gray.800")
+  
   return (
     <Flex
       {...props}
       as="footer"
       py="4"
+      bg={bg}
       fontFamily="body"
       borderTop="2px solid"
       borderTopColor="gray.300"
@@ -31,5 +34,3 @@ Footer.propTypes = {
   children: PropTypes.any,
   bg: PropTypes.string,
 }
-
-Footer.defaultProps = { bg: 'gray.200' }

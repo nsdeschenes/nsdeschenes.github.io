@@ -1,8 +1,10 @@
 import React from 'react'
-import { Box, Image } from '@chakra-ui/react'
+import { Box, Image, useColorModeValue } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 
 const ProjectCard = ({ project }) => {
+  const descriptionTextColor = useColorModeValue("gray.600", "gray.400")
+
   return (
     <Box
       maxH="lg"
@@ -32,7 +34,7 @@ const ProjectCard = ({ project }) => {
         >
           {project.title}
         </Box>
-        <Box color="gray.600" fontSize="sm">
+        <Box color={descriptionTextColor} fontSize="sm">
           {project.description}
         </Box>
       </Box>

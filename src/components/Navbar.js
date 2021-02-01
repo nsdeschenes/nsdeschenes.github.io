@@ -1,9 +1,14 @@
 import React from 'react'
 import { Link as ReactRouterLink } from 'react-router-dom'
-import { Flex, Stack } from '@chakra-ui/react'
+import { Flex, Stack, useColorMode, Button, useColorModeValue } from '@chakra-ui/react'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { node } from 'prop-types'
 
 export const Navbar = ({ children, ...props }) => {
+  const { colorMode, toggleColorMode } = useColorMode()
+
+  const bg = useColorModeValue("#fff", "gray.800")
+
   return (
     <Flex
       as="nav"
@@ -11,8 +16,8 @@ export const Navbar = ({ children, ...props }) => {
       justify="space-between"
       wrap="wrap"
       padding={{ sm: '0.6rem', md: '0.80rem', lg: '1rem', xl: '1rem' }}
-      bg="#fff"
       py="4px"
+      bg={bg}
       color="primary"
       borderBottom="2px solid"
       borderBottomColor="gray.300"
@@ -41,6 +46,9 @@ export const Navbar = ({ children, ...props }) => {
               })
             }
           })}
+          <Button onClick={toggleColorMode} ml="auto">
+            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          </Button>
         </Stack>
       </Flex>
     </Flex>

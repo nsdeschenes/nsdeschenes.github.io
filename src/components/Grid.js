@@ -4,7 +4,7 @@ import { Box, SimpleGrid } from '@chakra-ui/react'
 
 const Grid = ({ children }) => (
   <Box width="fit-content" mx="auto" mb="25">
-    <SimpleGrid columns={[1, null, 3]} spacing="60px" mx="auto">
+    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="60px" mx="auto">
       {children}
     </SimpleGrid>
   </Box>
