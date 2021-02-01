@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { Flex, Link, CSSReset, Image, Stack, Text } from '@chakra-ui/react'
+import { Flex, Link, CSSReset, Image, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 
 import { Navbar } from './components/Navbar'
 import { Main } from './components/Main'
@@ -12,9 +12,11 @@ const Projects = lazy(() => import('./pages/Projects'))
 const Presentations = lazy(() => import('./pages/Presentations'))
 
 const App = () => {
+  const bg = useColorModeValue("gray.50", "gray.800")
+
   return (
     <>
-      <Flex direction="column" minHeight="100vh" bg="gray.50">
+      <Flex direction="column" minHeight="100vh" bg={bg}>
         <CSSReset />
         <Navbar>
           <Link to="/">Home</Link>
