@@ -1,13 +1,19 @@
 import React from 'react'
 import { Link as ReactRouterLink } from 'react-router-dom'
-import { Flex, Stack, useColorMode, Button, useColorModeValue } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  Stack,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { node } from 'prop-types'
 
 export const Navbar = ({ children, ...props }) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
-  const bg = useColorModeValue("#fff", "gray.800")
+  const bg = useColorModeValue('#fff', 'gray.800')
 
   return (
     <Flex
@@ -46,9 +52,23 @@ export const Navbar = ({ children, ...props }) => {
               })
             }
           })}
-          <Button onClick={toggleColorMode} ml="auto">
-            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-          </Button>
+          <Box ml="auto">
+            {colorMode === 'light' ? (
+              <MoonIcon
+                as="button"
+                onClick={toggleColorMode}
+                ml="auto"
+                cursor="pointer"
+              />
+            ) : (
+              <SunIcon
+                as="button"
+                onClick={toggleColorMode}
+                ml="auto"
+                cursor="pointer"
+              />
+            )}
+          </Box>
         </Stack>
       </Flex>
     </Flex>
