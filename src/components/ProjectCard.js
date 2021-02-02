@@ -3,7 +3,7 @@ import { Box, Image, useColorModeValue } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 
 const ProjectCard = ({ project }) => {
-  const descriptionTextColor = useColorModeValue("gray.600", "gray.400")
+  const descriptionTextColor = useColorModeValue('gray.600', 'gray.400')
 
   return (
     <Box

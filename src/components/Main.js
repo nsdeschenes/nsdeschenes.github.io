@@ -3,7 +3,7 @@ import { node } from 'prop-types'
 import { Flex, useColorModeValue } from '@chakra-ui/react'
 
 export const Main = ({ children }) => {
-  const bg = useColorModeValue("gray.50", "gray.800")
+  const bg = useColorModeValue('gray.50', 'gray.800')
 
   return (
     <Flex
