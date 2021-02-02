@@ -3,7 +3,7 @@ import { Box, AspectRatio, useColorModeValue } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 
 const PresentationCard = ({ presentation }) => {
-  const descriptionTextColor = useColorModeValue("gray.600", "gray.400")
+  const descriptionTextColor = useColorModeValue('gray.600', 'gray.400')
 
   return (
     <Box

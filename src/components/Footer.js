@@ -5,8 +5,8 @@ import { Flex, List, ListItem, useColorModeValue } from '@chakra-ui/react'
 import { Layout } from './Layout'
 
 export const Footer = (props) => {
-  const bg = useColorModeValue("gray.300", "gray.800")
-  
+  const bg = useColorModeValue('gray.300', 'gray.800')
+
   return (
     <Flex
       {...props}
