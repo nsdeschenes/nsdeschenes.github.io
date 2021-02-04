@@ -1,15 +1,32 @@
 import React from 'react'
-import { Center, Heading, Text } from '@chakra-ui/react'
+import { Box, Center, Heading, Text } from '@chakra-ui/react'
 
 import { Layout } from '../components/Layout'
 
 const Home = () => {
   return (
     <Layout mb="5em">
-      <Center mt="15em">
-        <Heading size="4xl">Welcome</Heading>
+      <Center
+        height="100vh"
+        position="relative"
+        bgGradient="linear(to-r, green.200, pink.500)"
+      >
+        <Box
+          width="100%"
+          height="100%"
+          textAlign="center"
+          verticalAlign="center"
+          position="relative"
+          bg="#E2E8F0"
+          color="#000000"
+          style={{
+            mixBlendMode: 'screen',
+          }}
+        >
+          <Heading size="4xl">Welcome</Heading>
+        </Box>
       </Center>
-      <Text pt="100vh">
+      <Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet
         varius justo. Vivamus porttitor turpis in tortor feugiat dapibus. Nulla
         non interdum turpis, quis facilisis massa. Suspendisse nec tellus
