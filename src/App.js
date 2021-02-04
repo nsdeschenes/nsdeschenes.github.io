@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 import {
   Flex,
   Link,
@@ -21,17 +21,21 @@ const Presentations = lazy(() => import('./pages/Presentations'))
 
 const App = () => {
   const bg = useColorModeValue('gray.50', 'gray.800')
+  const location = useLocation()
+  console.log(location.pathname)
 
   return (
     <>
       <Flex direction="column" minHeight="100vh" bg={bg}>
         <CSSReset />
-        <Navbar>
-          <Link to="/">Home</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/presentations">Presentations</Link>
-        </Navbar>
-        <Main>
+        {location.pathname !== '/' && (
+          <Navbar>
+            <Link to="/">Home</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/presentations">Presentations</Link>
+          </Navbar>
+        )}
+        <Main pt={location.pathname !== '/' && (10)}>
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
               <Route exact path="/">
