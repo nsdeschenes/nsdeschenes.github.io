@@ -2,6 +2,7 @@ import linguiGraphql from '../images/lingui_graphql.png'
 import reactLogo from '../images/react_logo.png'
 import redisGraphql from '../images/redis_graphql.png'
 import trackerLogo from '../images/tracker_logo.png'
+import storeFrontLogo from '../images/store_front_logo.png'
 
 const projects = [
   {
@@ -12,6 +13,15 @@ const projects = [
     title: 'Tracker',
     description:
       'Track Government of Canada domains for adherence to digital security best practices and federal requirements.',
+  },
+  {
+    image: storeFrontLogo,
+    imageAlt: 'Store Front Logo',
+    imageBackground: '#FFFFFF',
+    projectUrl: 'https://github.com/nsdeschenes/store-front',
+    title: 'Store Front',
+    description:
+      'This project is a simple application that allows small business owners to track their consigners information, sales information, etc.',
   },
   {
     image: reactLogo,
