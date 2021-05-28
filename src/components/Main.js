@@ -2,7 +2,7 @@ import React from 'react'
 import { node } from 'prop-types'
 import { Flex, useColorModeValue } from '@chakra-ui/react'
 
-export const Main = ({ children }) => {
+export const Main = ({ children, ...props }) => {
   const bg = useColorModeValue('gray.50', 'gray.800')
 
   return (
@@ -13,9 +13,9 @@ export const Main = ({ children }) => {
       fontFamily="body"
       flex="1 0 auto"
       mx="auto"
-      pt={10}
       width="100%"
       bg={bg}
+      {...props}
     >
       {children}
     </Flex>
